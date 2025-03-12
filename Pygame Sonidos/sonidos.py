@@ -5,21 +5,21 @@ import pygame.locals as GAME_GLOBALS
 import pygame.event as GAME_EVENTS
 import pygame.time as GAME_TIME
 
-# Definimos el tamaño de la ventana
+# Definimos el tamaño de la ventana 22-SISN-2-026
 
 windowWidth = 600
 windowHeight = 650
 
-# Inicializamos el juego y la ventana
+# Inicializamos el juego y la ventana 22-SISN-2-026
 pygame.init()
 surface = pygame.display.set_mode((windowWidth, windowHeight))
 pygame.display.set_caption('Pruebas sonoras PyGame')
 
-# Definimos la variable donde guardaremos los diferentes botones
+# Definimos la variable donde guardaremos los diferentes botones 22-SISN-2-026
 buttons = []
 stopButton = { "image" : pygame.image.load("assets/images/stop.png"), "position" : (275, 585)}
 
-# Definimos una variable para guardar la posicion del raton y el volumen
+# Definimos una variable para guardar la posicion del raton y el volumen 22-SISN-2-026
 mousePosition = None
 volume = 1.0
 
@@ -27,10 +27,10 @@ pygame.mixer.init()
 pygame.mixer.music.load('assets/sounds/OGG/farm.ogg')
 pygame.mixer.music.play(-1)
 
-# Definimos las funciones que usaremos en nuestro codigo
+# Definimos las funciones que usaremos en nuestro codigo 22-SISN-2-026
 
 def drawButtons():
-# Funcion para dibujar los botones dentro de la ventana que hemos definido
+# Funcion para dibujar los botones dentro de la ventana que hemos definido 22-SISN-2-026
 
   for button in buttons:
     surface.blit(button["image"], button["position"])
@@ -38,7 +38,7 @@ def drawButtons():
   surface.blit(stopButton["image"], stopButton['position'])
 
 def drawVolume():
-# Funcion para dibujar la barra de volumen y el selector
+# Funcion para dibujar la barra de volumen y el selector 22-SISN-2-026
 
   pygame.draw.rect(surface, (229, 229, 229), (450, 610, 100, 5))
 
@@ -47,11 +47,11 @@ def drawVolume():
   pygame.draw.rect(surface, (204, 204, 204), (450 + volumePosition, 600, 10, 25))
 
 def handleClick():
-# Funcion para poder conocer la posición del cursor sobre la ventana
+# Funcion para poder conocer la posición del cursor sobre la ventana 22-SISN-2-026
 
   global mousePosition, volume
 
-# Primero miramos la posicion de todos los botones que hemos colocado y luego comprobamos que tenemos el cursor encima
+# Primero miramos la posicion de todos los botones que hemos colocado y luego comprobamos que tenemos el cursor encima 22-SISN-2-026
   for button in buttons:
 
     buttonSize = button['image'].get_rect().size
@@ -68,7 +68,7 @@ def handleClick():
         pygame.mixer.stop()
 
 def checkVolume():
-# Funcion para poder realizar los cambios en el volumen
+# Funcion para poder realizar los cambios en el volumen 22-SISN-2-026
 
   global mousePosition, volume
 
@@ -82,7 +82,7 @@ def quitGame():
   pygame.quit()
   sys.exit()
 
-# Creamos todos los botones dentro de la ventana
+# Creamos todos los botones dentro de la ventana  22-SISN-2-026
 buttons.append({ "image" : pygame.image.load("assets/images/sheep.png"), "position" : (25, 25), "sound" : pygame.mixer.Sound('assets/sounds/OGG/sheep.ogg')})
 buttons.append({ "image" : pygame.image.load("assets/images/rooster.png"), "position" : (225, 25), "sound" : pygame.mixer.Sound('assets/sounds/OGG/rooster.ogg')})
 buttons.append({ "image" : pygame.image.load("assets/images/pig.png"), "position" : (425, 25), "sound" : pygame.mixer.Sound('assets/sounds/OGG/pig.ogg')})
